@@ -1,0 +1,15 @@
+title 0.4: New note
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+note right of server: server finds new_note
+server->browser: HTTP status code 302 - URL Redirect
+note over browser: server tells browser to make a new GET request
+browser->server: HTTP GET /exampleapp/notes
+server->browser: notes-html-code
+note over browser: browser reloads notes page with new_note
+browser->server: HTTP GET /exampleapp/main.css
+server->browser: main.css
+browser->server: HTTP GET /exampleapp/main.js
+server->browser: main.js
+browser->server: HTTP GET /exampleapp/data.json
+server->browser: data.json
